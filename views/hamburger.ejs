@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Navbar</title>
+  <style>
+    /* CSS styles moved to head for better organization */
+    @media screen and (max-width: 600px) {
+      nav a {
+        display: none;
+      }
+
+      .icon {
+        display: block;
+        background-color: #555;
+        text-align: center;
+        padding: 10px;
+        cursor: pointer;
+      }
+
+      .show {
+        display: none;
+        text-align: center;
+      }
+
+      .show a {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        margin: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+<!-- Navbar -->
+
+<nav class="navbar navbar-expand-lg navbar-dark " style="background-color:#4d4747;">
+  <div class="container-fluid">
+    <a class="navbar-brand">Sticky rice</a>
+    <form class="d-flex input-group w-auto">
+      <input
+        type="search"
+        class="form-control rounded"
+        placeholder="Search"
+        aria-label="Search"
+        aria-describedby="search-addon"
+      />
+      <span class="input-group-text border-0" id="search-addon">
+        <i class="fas fa-search"></i>
+      </span>
+    </form>
+  </div>
+</nav>
+
+
+<!-- Navbar -->
+  <nav>
+    <ul class="navigation">
+
+      <li><a href="#home">Home</a></li>
+      <li><a href="#About">About</a></li>
+      <li><a href="#Products">Products</a></li>
+      <li><a href="#Contact">Contact</a></li>
+    
+      <a href="/api/cart">
+        <li><img src="images/cart-icon-28344.png" width="40px" height="40px" alt="Cart"></li>
+      </a>
+    </ul>
+    <div class="show" id="navbar">
+      <a href="#" class=""></a>
+    </div>
+    
+  </nav>
+
+  
+
+  <script>
+    function toggleMenu() {
+      var x = document.getElementById("navbar");
+      if (x.style.display === "block") {
+        x.style.display = "none";
+      } else {
+        x.style.display = "block";
+      }
+    }
+  </script>
+
+</body>
+
+</html>

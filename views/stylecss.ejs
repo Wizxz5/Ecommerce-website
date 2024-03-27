@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Product Showcase</title>
+  <link href="https://fonts.googleapis.com/css?family=Bentham|Playfair+Display|Raleway:400,500|Suranna|Trocchi" rel="stylesheet">
+  <style>
+    /* General styling */
+
+    :root {
+    --text-01: #45413e;
+	--light-01: #f9f9f9;
+	--light-02: #ffffff;
+	--brand-01: #db7f67;
+	--brand-02: #f4cfc6;
+	--card-hover: 0px 4px 24px rgba(0, 0, 0, 0.15);
+	--card-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
+	--hover-timing: all 0.2s ease;
+	--nav-card-size: 240px;
+}
+    body {
+      font-family: system-ui;
+      background-color: rgb(255, 255, 255);
+      background: #c60b0b;
+      text-align: center;
+    }
+
+    .wrapper {
+      height: 490px;
+      width: 654px;
+      margin: 50px auto;
+      border-radius: 7px;
+      box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+      text-align: center;
+    }
+
+    /* Product styling */
+    .product {
+      display: flex;
+      justify-content: space-around;
+    }
+
+    .product-img {
+      float: left;
+      height: 420px;
+      width: 327px;
+      overflow: hidden;
+    }
+
+    .product-img img {
+      border-radius: 7px 0 0 7px;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .product-info {
+      float: left;
+      height: 420px;
+      width: 327px;
+      border-radius: 0 7px 10px 7px;
+      background-color: #ffffff;
+    }
+
+    .product-text {
+      height: 300px;
+      width: 327px;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .product-text h1 {
+      margin: 0;
+      font-size: 25px;
+      color: #474747;
+    }
+
+    .product-text h2 {
+      margin: 10px 0 20px;
+      font-size: 13px;
+      font-family: 'Raleway', sans-serif;
+      font-weight: 400;
+      text-transform: uppercase;
+      color: #d2d2d2;
+      letter-spacing: 0.2em;
+    }
+
+    .product-text p {
+      margin: 0;
+      font-size: 14px;
+      font-weight: lighter;
+      overflow: hidden;
+      color: #8d8d8d;
+      line-height: 1.5;
+    }
+
+    .product-price-btn {
+      height: 103px;
+      width: 327px;
+      margin-top: -50px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .product-price-btn p {
+      display: inline-block;
+      margin: 10px 0 0 5px;
+      font-size: 28px;
+      font-weight: lighter;
+      color: #474747;
+    }
+
+    span p {
+      display: inline-block;
+      margin-top: 10px;
+      font-size: 34px;
+    }
+
+    .product-price-btn button {
+      float: right;
+      height: 80px;
+      width: 176px;
+      padding: 10px;
+      box-sizing: border-box;
+      border: transparent;
+      border-radius: 60px;
+      font-family: 'Raleway', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: #ffffff;
+      background-color: #79b0a1;
+      border-radius: 5px;
+      cursor: pointer;
+      outline: none;
+    }
+
+    .product {
+  display: inline-block;
+  margin-right: 10px;
+  justify-content: space-around;
+  margin-bottom: 20px; /* Adjust the value based on the desired spacing */
+}
+
+  .product-price-btn button:hover {
+      background-color: #79b0a1;
+    }
+    
+
+
+
+   
+
+
+    
+
+.img {
+    margin-right: 30%; /* Add space next to the image icon */
+}
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #ffffff;
+    }
+
+footer {
+    background: var(--text-01);
+    padding: 80px 80px 50px;
+    justify-content: space-around;
+    position: relative; 
+    width: 100%;
+     list-style-type: none;
+     
+}
+
+footer ul {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 24px;
+    box-shadow: none;
+    flex: 1;
+    color: var(--light-01);
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 50px;
+    list-style-type: none;
+    
+}
+
+footer ul li a {
+    color: var(--light-01);
+    text-decoration: none;
+    font-size: 14px;
+    list-style-type: none;
+    
+}
+
+footer ul li {
+    color: var(--light-01);
+    padding: 0;
+    list-style-type: none;
+    
+}
+
+footer {
+		flex-direction: column;
+		text-align: center;
+    flex-direction: row;
+    list-style-type: none;
+    
+
+	}
+
+  body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+}
+
+
+
+header {
+      height: auto;
+      position: fixed;
+      top: 0%;
+      z-index: 100;
+      display: flex;
+      align-items: center
+      
+    }
+.navigation {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  list-style: none;
+  margin: 0; 
+  color: var(--text-01);
+  background: var(--light-01);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.navigation a {
+  text-decoration: none;
+  display: block;
+  padding: 1em;
+   color: var(--text-01);
+ 
+}
+
+.navigation a:hover {
+  background: #3333;
+}
+
+
+
+
+
+  </style>
+  
+ 
+  </html>
+  

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Product Showcase</title>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Bentham|Playfair+Display|Raleway:400,500|Suranna|Trocchi"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="row" id="productWrapper">
+        <!-- Products will be dynamically added here -->
+      </div>
+    </div>
+
+    <script>
+      // Fetch product data from the provided URL
+      fetch("https://fakestoreapi.com/products/")
+        .then((response) => response.json())
+        .then((data) => {
+          const productWrapper = document.getElementById("productWrapper");
+
+          // Set the maximum number of products to show
+          const maxProductsToShow = 20;
+
+          // Iterate through the products and create HTML structure
+          data.forEach((productData, index) => {
+            if (index < maxProductsToShow) {
+              const productColumn = document.createElement("div");
+              productColumn.classList.add(
+                "mt-5",
+                "col-lg-4",
+                "col-md-6",
+                "mb-4"
+              );
+              productColumn.innerHTML = `
+            <div class="card h-100" data-product-id="${productData.id}">
+              <img src="${productData.image}" class="card-img-top" alt="Product ${
+                index + 1
+              }">
+              <div class="card-body">
+                <h5 class="card-title">${productData.title}</h5>
+                <p class="card-text">${productData.description}</p>
+                <p class="card-text"><small class="text-muted">${productData.category}</small></p>
+                <p class="card-text">$${productData.price}</p>
+                <button type="button" class="btn btn-primary">Buy Now</button>
+                <button type="button" class="btn btn-secondary find-product-id-button">Find Product ID</button>
+              </div>
+            </div>
+          `;
+
+              // Add event listener to the "Find Product ID" button
+              setTimeout(() => {
+                productColumn.querySelector(".find-product-id-button").addEventListener("click", () => {
+                  // Find the product ID by finding the closest product card and extracting the product ID
+                  const productId = productColumn.closest(".card").dataset.productId;
+                  console.log(`Product ID: ${productId}`);
+                });
+              }, 0);
+
+              // Append each product column to the wrapper
+              productWrapper.appendChild(productColumn);
+            }
+          });
+        })
+        .catch((error) => console.error("Error fetching product data:", error));
+    </script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>
