@@ -48,16 +48,23 @@
                 <p class="card-text">${productData.description}</p>
                 <p class="card-text"><small class="text-muted">${productData.category}</small></p>
                 <p class="card-text">$${productData.price}</p>
-                <button type="button" class="btn btn-primary">Buy Now</button>
+                <button type="button" class="btn btn-primary buy-now-button" data-product-id="${productData.id}">Buy Now</button>
                 <button type="button" class="btn btn-secondary find-product-id-button">Find Product ID</button>
               </div>
             </div>
           `;
 
-              // Add event listener to the "Find Product ID" button
+              // Add event listener to the "Buy Now" button
+              setTimeout(() => {
+                productColumn.querySelector(".buy-now-button").addEventListener("click", (event) => {
+                  const productId = event.target.dataset.productId;
+                  window.location.href = `/product/${productId}`;
+                });
+              }, 0);
+
+              // Add event listener to the "Find Product ID" button (just for demonstration)
               setTimeout(() => {
                 productColumn.querySelector(".find-product-id-button").addEventListener("click", () => {
-                  // Find the product ID by finding the closest product card and extracting the product ID
                   const productId = productColumn.closest(".card").dataset.productId;
                   console.log(`Product ID: ${productId}`);
                 });

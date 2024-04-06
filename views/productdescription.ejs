@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <!-- Adicione aqui os links para seus arquivos de estilo CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <!-- Aqui você pode adicionar um cabeçalho com o nome do aplicativo ou marca -->
+    <h1>Product Description</h1>
+  </header>
+
+  <main>
+    <!-- Aqui você pode exibir as informações do produto -->
+    <div class="product-details">
+      <h2><%= product.title %></h2>
+      <p>Category: <%= product.category %></p>
+      <p>Price: $<%= product.price %></p>
+      <p>Description: <%= product.description %></p>
+      <!-- Adicione mais informações conforme necessário -->
+    </div>
+  </main>
+
+  <footer>
+    <!-- Aqui você pode adicionar um rodapé com informações adicionais ou links -->
+    <p>&copy; 2024 Your Company</p>
+  </footer>
+</body>
+</html>

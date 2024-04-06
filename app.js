@@ -10,7 +10,7 @@ var fetch = require('node-fetch');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var cartRouter = require('./routes/cart');
-
+let productRouter = require('./routes/productdetails');
 
 var app = express();
 
@@ -42,7 +42,7 @@ try {
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/api/cart', cartRouter);
-
+app.use('/', productRouter);
 
 
 
